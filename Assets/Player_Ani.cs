@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player_Ani : MonoBehaviour
 {
-    public float vel;
+    public float vel, leftRotate, rightRotate;
     Animator ani;
+    //Rigidbody man;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,13 +42,26 @@ public class Player_Ani : MonoBehaviour
         }
         else
         {
-            vel -= 0.5f * Time.deltaTime;
+            vel -= 0.8f * Time.deltaTime;
             if (vel <= 0)
             {
                 vel = 0f;
             }
         }
         ani.SetFloat("Velocity", vel);
+        if (Input.GetKey(KeyCode.A))
+        {
+            ani.transform.Rotate(0, -1, 0, Space.Self);
+        }
 
+        if (Input.GetKey(KeyCode.D))
+        {
+            ani.transform.Rotate(0, 1, 0, Space.Self);
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ani.transform.Rotate(0, 180, 0, Space.Self);
+        }
     }
 }
