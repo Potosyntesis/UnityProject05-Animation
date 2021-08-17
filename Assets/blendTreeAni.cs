@@ -27,30 +27,30 @@ public class blendTreeAni : MonoBehaviour
             VelZ -= 0.5f * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && VelZ <= 1f)
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift) && VelX >= -1f)
         {
-            VelZ += 0.5f * Time.deltaTime;
+            VelX -= 0.5f * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.W) && VelZ <= 0.5f)
+        else if (Input.GetKey(KeyCode.A) && VelX >= -0.5f)
         {
-            VelZ += 0.5f * Time.deltaTime;
+            VelX -= 0.5f * Time.deltaTime;
         }
-        else if (VelZ >= 0)
+        else if (VelX <= 0)
         {
-            VelZ -= 0.5f * Time.deltaTime;
+            VelX += 0.5f * Time.deltaTime;
         }
 
-        if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.LeftShift) && VelZ <= 1f)
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && VelX <= 1f)
         {
-            VelZ += 0.5f * Time.deltaTime;
+            VelX += 0.5f * Time.deltaTime;
         }
-        else if (Input.GetKey(KeyCode.W) && VelZ <= 0.5f)
+        else if (Input.GetKey(KeyCode.D) && VelX <= 0.5f)
         {
-            VelZ += 0.5f * Time.deltaTime;
+            VelX += 0.5f * Time.deltaTime;
         }
-        else if (VelZ >= 0)
+        else if (VelX >= 0)
         {
-            VelZ -= 0.5f * Time.deltaTime;
+            VelX -= 0.5f * Time.deltaTime;
         }
 
         ani.SetFloat("VelocityX", VelX);
