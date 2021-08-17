@@ -38,9 +38,7 @@ public class blendTreeAni : MonoBehaviour
         else if (VelX <= 0)
         {
             VelX += 0.5f * Time.deltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && VelX <= 1f)
+        }else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift) && VelX <= 1f)
         {
             VelX += 0.5f * Time.deltaTime;
         }
